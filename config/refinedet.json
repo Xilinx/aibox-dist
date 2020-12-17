@@ -1,0 +1,19 @@
+{
+  "xclbin-location":"/lib/firmware/xilinx/kv260-smartcam/kv260-smartcam.xclbin",
+  "vvas-library-repo": "/usr/lib/",
+  "element-mode":"inplace",
+  "kernels" :[
+    {
+      "library-name":"libvvas_xdpuinfer.so",
+      "config": {
+          "model-name" : "refinedet_pruned_0_92",
+          "model-class" : "REFINEDET",
+          "model-path" : "/opt/xilinx/share/vitis_ai_library/models/kv260-aibox-dist",
+          "run_time_model" : false,
+          "need_preprocess" : true,
+          "performance_test" : false,
+          "debug_level" : 0
+      }
+    }
+  ]
+}

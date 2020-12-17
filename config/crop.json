@@ -1,0 +1,11 @@
+{
+  "xclbin-location": "/usr/lib/dpu.xclbin",
+  "vvas-library-repo": "/opt/xilinx/lib/",
+  "element-mode": "passthrough",
+  "kernels": [
+    {
+      "library-name": "libaibox_dist_crop.so",
+      "config": {}
+    }
+  ]
+}
