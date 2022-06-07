@@ -44,7 +44,7 @@ target_include_directories(aibox_dist_reid PRIVATE reidtracker/include/)
 set_target_properties(aibox_dist_reid PROPERTIES INSTALL_RPATH "/opt/xilinx/lib")
 target_link_libraries(aibox_dist_reid
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 gstrtsp-1.0 gstrtspserver-1.0
-  glib-2.0 gobject-2.0 ${OpenCV_LIBS} jansson vitis_ai_library-reid gstvvasinfermeta-1.0 glog pthread
+  glib-2.0 gobject-2.0 ${OpenCV_LIBS} jansson vitis_ai_library-reid gstvvasinfermeta-2.0 glog pthread
   vitis_ai_library-classification vitis_ai_library-dpu_task)
 install(TARGETS aibox_dist_reid DESTINATION ${INSTALL_PATH}/lib)
 add_dependencies(aibox_dist_reid cros_mt_reid)
@@ -53,27 +53,27 @@ add_library(aibox_dist_crop SHARED src/aibox_dist_crop.cpp)
 target_include_directories(aibox_dist_crop PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(aibox_dist_crop
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 gstrtsp-1.0 gstrtspserver-1.0
-  glib-2.0 gobject-2.0 ${OpenCV_LIBS} jansson vvasutil gstvvasinfermeta-1.0 glog)
+  glib-2.0 gobject-2.0 ${OpenCV_LIBS} jansson vvasutil-2.0 gstvvasinfermeta-2.0 glog)
 install(TARGETS aibox_dist_crop DESTINATION ${INSTALL_PATH}/lib)
 
 add_library(aibox_dist_drawreid SHARED src/aibox_dist_drawreid.cpp)
 target_include_directories(aibox_dist_drawreid PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(aibox_dist_drawreid
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 gstrtsp-1.0 gstrtspserver-1.0
-  glib-2.0 gobject-2.0 ${OpenCV_LIBS}  jansson vvasutil gstvvasinfermeta-1.0)
+  glib-2.0 gobject-2.0 ${OpenCV_LIBS}  jansson vvasutil-2.0 gstvvasinfermeta-2.0)
 install(TARGETS aibox_dist_drawreid DESTINATION ${INSTALL_PATH}/lib)
 
 add_library(aibox_dist_pedpp SHARED src/aibox_dist_pedpp.c)
 target_include_directories(aibox_dist_pedpp PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(aibox_dist_pedpp
-  jansson vvasutil gstvvasinfermeta-1.0)
+  jansson vvasutil-2.0 gstvvasinfermeta-2.0)
 install(TARGETS aibox_dist_pedpp DESTINATION ${INSTALL_PATH}/lib)
 
 add_library(gstaibox-dist-attach SHARED src/gstaibox_dist_attach.cpp src/dataSaveLoad.cpp)
 target_include_directories(gstaibox-dist-attach PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(gstaibox-dist-attach
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 
-  jansson vvasutil gstvvasinfermeta-1.0 ${OpenCV_LIBS} boost_serialization
+  jansson vvasutil-2.0 gstvvasinfermeta-2.0 ${OpenCV_LIBS} boost_serialization
   zmq)
 install(TARGETS gstaibox-dist-attach DESTINATION ${INSTALL_PATH}/lib)
 
@@ -81,7 +81,7 @@ add_library(gstaibox-dist-parse SHARED src/gstaibox_dist_parse.cpp src/dataSaveL
 target_include_directories(gstaibox-dist-parse PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(gstaibox-dist-parse
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 
-  jansson vvasutil gstvvasinfermeta-1.0 ${OpenCV_LIBS} boost_serialization
+  jansson vvasutil-2.0 gstvvasinfermeta-2.0 ${OpenCV_LIBS} boost_serialization
   zmq)
 install(TARGETS gstaibox-dist-parse DESTINATION ${INSTALL_PATH}/lib)
 
@@ -89,7 +89,7 @@ add_library(gstaibox-dist-sum SHARED src/gstaibox_dist_sum.cpp src/cross_track.c
 target_include_directories(gstaibox-dist-sum PRIVATE ${GSTREAMER_INCLUDE_DIRS} cros_mt_reid/src/)
 target_link_libraries(gstaibox-dist-sum
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 
-  jansson vvasutil gstvvasinfermeta-1.0 ${OpenCV_LIBS} cros_mt_reid)
+  jansson vvasutil-2.0 gstvvasinfermeta-2.0 ${OpenCV_LIBS} cros_mt_reid)
 install(TARGETS gstaibox-dist-sum DESTINATION ${INSTALL_PATH}/lib)
 
 
