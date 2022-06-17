@@ -219,12 +219,12 @@ bool CrossCameraTracker::appear_same_cam(Tracker t1, Tracker tracker) {
 #endif
   bool check = false;
   if (t1->cam == tracker->cam) {
-    auto det1 = t1->dets;
-    auto det2 = tracker->dets;
     __TIC__(MERGE_LOOP_ONE_APPEAR_SAME_SUB_OPT)
     check = t1->SameAs(*tracker);
     __TOC__(MERGE_LOOP_ONE_APPEAR_SAME_SUB_OPT)
 #if 0
+    auto &det1 = t1->dets;
+    auto &det2 = tracker->dets;
     for(auto d1 : det1){
       for(auto d2 : det2){
         if(d1.first == d2.first) {
