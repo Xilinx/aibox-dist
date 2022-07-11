@@ -88,11 +88,11 @@
 
             * Examples
 
-            > sudo aibox-dist-monitor -s rtsp://address-of-cam-1 -t r -s rtsp://address-of-cam-2 -t r -S 1
+            > sudo aibox-dist-monitor -s rtsp://address-of-cam-1 -s rtsp://address-of-cam-2 -S 1
 
             **Note** Above example is for live steam capturing from camera, if you are starting with the video file streaming way which we recommended as a start point, please **remove the option "-S 1"** as.
 
-            > sudo aibox-dist-monitor -s rtsp://address-of-cam-1 -t r -s rtsp://address-of-cam-2 -t r
+            > sudo aibox-dist-monitor -s rtsp://address-of-cam-1 -s rtsp://address-of-cam-2
 
             **Note**: Only one instance of aibox-dist-monitor application can run at a time because it requires exclusive access to a DPU engine and there is only one instance of DPU that exists in the aibox-monitor platform.
 
