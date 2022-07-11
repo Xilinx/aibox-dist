@@ -153,7 +153,13 @@ static int parse_rect(VVASKernel * handle, int start,
 }
 
 extern "C" {
+  static int xsleep = 100;
 int32_t xlnx_kernel_init(VVASKernel *handle) {
+  char *env = getenv("SLEEP");
+  if (env) {
+    xsleep = atoi(env);
+    printf("SLEEP env: %d\n", xsleep);
+  }
   json_t *jconfig = handle->kernel_config;
   json_t *val; /* kernel config from app */
 
@@ -282,6 +288,7 @@ int32_t xlnx_kernel_start(VVASKernel *handle, int start /*unused */,
       gst_buffer_unmap(buffer, &info);
     }
   }
+  usleep(xsleep);
   m__TOC__(getfeat);
   {
     VVASFrame *inframe = input[0];
