@@ -266,7 +266,7 @@ gst_aibox_dist_sum_init (GstAIBox_dist_Sum * self)
   self->system_inited = false;
   self->system_init_err = false;
   self->use_pts = 0;
-  self->configPath = "/opt/xilinx/share/vvas/aibox-dist/cam_setup.json";
+  self->configPath = "/opt/xilinx/kv260-aibox-dist/share/vvas/cam_setup.json";
 }
 
 static void

@@ -405,11 +405,11 @@ main (int argc, char *argv[])
     putenv((char*)setPath.c_str());
 
     pathVar = std::getenv("LD_LIBRARY_PATH");
-    setPath = std::string("LD_LIBRARY_PATH=/opt/xilinx/lib:") + (pathVar ? std::string(pathVar) : "");
+    setPath = std::string("LD_LIBRARY_PATH=/opt/xilinx/kv260-aibox-dist/lib:") + (pathVar ? std::string(pathVar) : "");
     putenv((char*)setPath.c_str());
 
     pathVar = std::getenv("GST_PLUGIN_PATH");
-    setPath = std::string("GST_PLUGIN_PATH=/opt/xilinx/lib:") + (pathVar ? std::string(pathVar) : "");
+    setPath = std::string("GST_PLUGIN_PATH=/opt/xilinx/kv260-aibox-dist/lib:") + (pathVar ? std::string(pathVar) : "");
     putenv((char*)setPath.c_str());
 
     GMainLoop *loop;
@@ -474,7 +474,7 @@ main (int argc, char *argv[])
     loop = g_main_loop_new (NULL, FALSE);
 
     std::string appname = "aibox-dist";
-    std::string confdir("/opt/xilinx/share/vvas/");
+    std::string confdir("/opt/xilinx/kv260-aibox-dist/share/vvas/");
     confdir += appname;
     char pip[2500];
     pip[0] = '\0';

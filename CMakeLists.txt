@@ -32,7 +32,7 @@ find_package(OpenCV REQUIRED COMPONENTS opencv_core opencv_video opencv_videoio 
 #find_package(cppzmq REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS}) 
-SET(INSTALL_PATH "opt/xilinx")
+SET(INSTALL_PATH "opt/xilinx/kv260-aibox-dist")
 #SET(CMAKE_INSTALL_PREFIX ${INSTALL_PATH})
 
 
@@ -41,7 +41,7 @@ add_subdirectory(cros_mt_reid/)
 add_library(aibox_dist_reid SHARED src/aibox_dist_reid.cpp src/common.hpp)
 target_include_directories(aibox_dist_reid PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_include_directories(aibox_dist_reid PRIVATE reidtracker/include/)
-set_target_properties(aibox_dist_reid PROPERTIES INSTALL_RPATH "/opt/xilinx/lib")
+set_target_properties(aibox_dist_reid PROPERTIES INSTALL_RPATH ${INSTALL_PATH}/lib)
 target_link_libraries(aibox_dist_reid
   gstapp-1.0 gstreamer-1.0 gstbase-1.0 gobject-2.0 glib-2.0 gstvideo-1.0 gstallocators-1.0 gstrtsp-1.0 gstrtspserver-1.0
   glib-2.0 gobject-2.0 ${OpenCV_LIBS} jansson vitis_ai_library-reid gstvvasinfermeta-2.0 glog pthread
@@ -129,6 +129,10 @@ install(FILES
     config/draw_reid.json
     config/cam_setup.json
     DESTINATION ${INSTALL_PATH}/share/vvas/${CMAKE_PROJECT_NAME})
+
+install(DIRECTORY
+    models/kv260/
+    DESTINATION ${INSTALL_PATH}/share/vitis_ai_library/models/)
 
 install(DIRECTORY
     notebook/

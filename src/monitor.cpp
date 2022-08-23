@@ -34,7 +34,7 @@ static char *msgFirmware = (char *)"Please make sure that the HW accelerator fir
 static gchar* DEFAULT_SRC_TYPE = (gchar*)"r";
 static gchar* DEFAULT_SRC_ENC = (gchar*)"h264";
 static gchar* DEFAULT_FRAME_RATE = (gchar*)"auto";
-static gchar* DEFAULT_CONFIGPATH = (gchar*)"/opt/xilinx/share/vvas/aibox-dist/cam_setup.json";
+static gchar* DEFAULT_CONFIGPATH = (gchar*)"/opt/xilinx/kv260-aibox-dist/share/vvas/aibox-dist/cam_setup.json";
 static gchar** srctypes = NULL;
 static gchar** srcencs = NULL;
 static gchar** srcs= NULL;
@@ -157,11 +157,11 @@ main (int argc, char *argv[])
     putenv((char*)setPath.c_str());
 
     pathVar = std::getenv("LD_LIBRARY_PATH");
-    setPath = std::string("LD_LIBRARY_PATH=/opt/xilinx/lib:") + (pathVar ? std::string(pathVar) : "");
+    setPath = std::string("LD_LIBRARY_PATH=/opt/xilinx/kv260-aibox-dist/lib:") + (pathVar ? std::string(pathVar) : "");
     putenv((char*)setPath.c_str());
 
     pathVar = std::getenv("GST_PLUGIN_PATH");
-    setPath = std::string("GST_PLUGIN_PATH=/opt/xilinx/lib:") + (pathVar ? std::string(pathVar) : "");
+    setPath = std::string("GST_PLUGIN_PATH=/opt/xilinx/kv260-aibox-dist/lib:") + (pathVar ? std::string(pathVar) : "");
     putenv((char*)setPath.c_str());
 
     GMainLoop *loop;
@@ -186,7 +186,7 @@ main (int argc, char *argv[])
       return 1;
     }
 
-    std::string confdir("/opt/xilinx/share/vvas/aibox-dist");
+    std::string confdir("/opt/xilinx/kv260-aibox-dist/share/vvas/");
     char pip[12500];
     pip[0] = '\0';
     sprintf(pip + strlen(pip), "aibox_dist_sum name=sum sync-type=%d tol=%d tol-time=%d push-all-pop=%d delay=10000 timeout=-1 use-pts=1 config=%s "

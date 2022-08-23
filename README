@@ -120,7 +120,7 @@
               -p, --pos=[0|1|2|3]                                               Location of the display in the 4 grids of 4k monitor. Optional. 0: top left, 1: top right, 2: bottom left, 3: bottom right. Optional. Can set up to 4 times.
               -r, --framerate=auto                                              Framerate of the input. Optional. Can set up to 4 times.
               -R, --report                                                      Report fps
-              -c, --config=/opt/xilinx/share/vvas/aibox-dist/cam_setup.json     System calibration json file path
+              -c, --config=/opt/xilinx/kv260-aibox-dist/share/vvas/cam_setup.json     System calibration json file path
 
             ```
 
@@ -128,14 +128,14 @@
 
     The application is installed as:
 
-        * Binary File Directory: /opt/xilinx/bin
+        * Binary File Directory: /opt/xilinx/kv260-aibox-dist/bin
 
           | filename | description |
           |----------|-------------|
           |aibox-dist-cam | app for camera board|
           |aibox-dist-monitor | app for monitor board|
 
-        * Configuration file directory: /opt/xilinx/share/ivas/aibox-dist
+        * Configuration file directory: /opt/xilinx/kv260-aibox-dist/share/ivas
 
           | filename | description |
           |-|-|
@@ -144,3 +144,16 @@
           | refinedet.json   |           Config of refinedet.
           | crop.json        |           Config of cropping for reid.
           | reid.json        |           Config of reid.
+
+        *  Model files: => /opt/xilinx/kv260-aibox-dist/share/vitis_ai_library/models
+
+          The model files integrated in the application use the B3136 DPU configuration.
+
+          |      foldername      | description |
+          |----------------------|-------------|
+          |person-orientation_pruned_558m_pt | Model files for personal orientation|
+          |personreid-res18_pt   | Model files for ReID |
+          |refinedet_pruned_0_92 | Model files for refinedet |
+          |FairMot               | Model files for pedestrian detection|
+
+

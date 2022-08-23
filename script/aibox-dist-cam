@@ -16,4 +16,4 @@
 #
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-LD_LIBRARY_PATH=/opt/xilinx/lib GST_PLUGIN_PATH=/opt/xilinx/lib ${DIR}/aibox-dist/aibox-dist-cam "${@}"
+LD_LIBRARY_PATH=/opt/xilinx/kv260-aibox-dist/lib GST_PLUGIN_PATH=/opt/xilinx/kv260-aibox-dist/lib ${DIR}/aibox-dist/aibox-dist-cam "${@}"

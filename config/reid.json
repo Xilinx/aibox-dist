@@ -1,12 +1,12 @@
 {
   "xclbin-location": "/usr/lib/dpu.xclbin",
-  "vvas-library-repo": "/opt/xilinx/lib/",
+  "vvas-library-repo": "/opt/xilinx/kv260-aibox-dist/lib/",
   "element-mode": "inplace",
   "kernels": [
     {
       "library-name": "libaibox_dist_reid.so",
       "config": {
-          "model-path": "/opt/xilinx/share/vitis_ai_library/models/kv260-aibox-dist/",
+          "model-path": "/opt/xilinx/kv260-aibox-dist/share/vitis_ai_library/models/",
           "model-name": "personreid-res18_pt",
           "orientation-model-name": "person-orientation_pruned_558m_pt",
           "debug_level": 0

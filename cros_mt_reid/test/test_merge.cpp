@@ -81,9 +81,9 @@ queue<vector<cros_reid_info>> queueInput;  // input queue
 // vector<vector<cros_reid_info>> input_infos;
 const vector<string> cam_img_paths{"/img1/", "/img2/", "/img3/"};
 void reader() {
-  auto reid = vitis::ai::Reid::create(                 "/opt/xilinx/share/vitis_ai_library/models/kv260-aibox-dist/personreid-res18_pt/personreid-res18_pt.xmodel");
-  auto orientation = vitis::ai::Classification::create("/opt/xilinx/share/vitis_ai_library/models/kv260-aibox-dist/person-orientation_pruned_558m_pt/person-orientation_pruned_558m_pt.xmodel");
-  auto det = vitis::ai::RefineDet::create(             "/opt/xilinx/share/vitis_ai_library/models/kv260-aibox-dist/refinedet_pruned_0_92/refinedet_pruned_0_92.xmodel");
+  auto reid = vitis::ai::Reid::create(                 "/opt/xilinx/kv260-aibox-dist/share/vitis_ai_library/models/personreid-res18_pt/personreid-res18_pt.xmodel");
+  auto orientation = vitis::ai::Classification::create("/opt/xilinx/kv260-aibox-dist/share/vitis_ai_library/models/person-orientation_pruned_558m_pt/person-orientation_pruned_558m_pt.xmodel");
+  auto det = vitis::ai::RefineDet::create(             "/opt/xilinx/kv260-aibox-dist/share/vitis_ai_library/models/refinedet_pruned_0_92/refinedet_pruned_0_92.xmodel");
 
   printf("reid fix point: %d\n", reid->get_input_fix_point());
   printf("ori  fix point: %d\n", orientation->get_input_fix_point());
@@ -169,7 +169,7 @@ void run() {
   Mat image = imread(baseImagePath + cam_img_paths[0] + images[0]);
   int imgw = image.cols, imgh = image.rows;
 
-  auto tracker = new CrossTracker("/opt/xilinx/share/vvas/aibox-dist/cam_setup.json", cams.size(), imgw, imgh);
+  auto tracker = new CrossTracker("/opt/xilinx/kv260-aibox-dist/share/vvas/cam_setup.json", cams.size(), imgw, imgh);
  // ofstream of(outfile);
   chrono::system_clock::time_point start_time = chrono::system_clock::now();
 
