@@ -128,7 +128,7 @@ install(FILES
     config/reid.json
     config/draw_reid.json
     config/cam_setup.json
-    DESTINATION ${INSTALL_PATH}/share/vvas/${CMAKE_PROJECT_NAME})
+    DESTINATION ${INSTALL_PATH}/share/vvas/)
 
 install(DIRECTORY
     models/kv260/
@@ -136,7 +136,7 @@ install(DIRECTORY
 
 install(DIRECTORY
     notebook/
-    DESTINATION ${INSTALL_PATH}/share/notebooks/${CMAKE_PROJECT_NAME}/)
+    DESTINATION ${INSTALL_PATH}/share/notebooks/)
 
 set(VERSION "1.0.1")
 set(CPACK_PACKAGE_VERSION ${VERSION})

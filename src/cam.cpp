@@ -473,9 +473,7 @@ main (int argc, char *argv[])
 
     loop = g_main_loop_new (NULL, FALSE);
 
-    std::string appname = "aibox-dist";
     std::string confdir("/opt/xilinx/kv260-aibox-dist/share/vvas/");
-    confdir += appname;
     char pip[2500];
     pip[0] = '\0';
 
