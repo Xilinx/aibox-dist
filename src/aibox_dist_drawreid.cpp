@@ -401,7 +401,7 @@ extern "C"
           infer_meta->prediction->reserved_5 = NULL;
         }
         if (data) {
-          LOG_MESSAGE(LOG_LEVEL_ERROR, "CH %lu, drawreid remove result %lu, %p.", (uint64_t)infer_meta->prediction->reserved_2, data->frame_id, data);
+          LOG_MESSAGE(LOG_LEVEL_DEBUG, "CH %lu, drawreid remove result %lu, %p.", (uint64_t)infer_meta->prediction->reserved_2, data->frame_id, data);
           delete data;
           infer_meta->prediction->reserved_3 = NULL;
         }
