@@ -1,5 +1,16 @@
+<h1 align="center">AIBOX DISTRIBUTED REID APPLICATION</h1>
 
-# Development Guide
+## Introduction
+This repository contains source code of AIBox Distributed ReID application. 
+The AIBox Distribution accelerated application performs distributed, scalable, multi-stream cross tracking and Re-Identification. The application leverages machine learning for pedestrian tracking and decoding multiple camera streams and performs pedestrian detection and tracking across camera feeds. Common applications include smart cities, retail analytics, and video analytics.
+
+<div align="center">
+  <img src="./media/aibox-dist-landing.png" width=700>
+</div>
+
+For detailed documentation of this application please visit the [documentation page](https://xilinx.github.io/kria-apps-docs/kv260/2022.1/build/html/docs/aibox/aibox-dist_landing.html)
+
+## Development Guide
 
 If you want to cross compile the source in Linux PC machine, follow these steps, otherwise skip this section.
 
@@ -9,11 +20,11 @@ If you want to cross compile the source in Linux PC machine, follow these steps,
 
 3. The build process in [2](#build-app) will produce a rpm package aibox-dist-1.0.1-1.aarch64.rpm under build/, upload to the board, and run "rpm -ivh --force ./aibox-dist-1.0.1-1.aarch64.rpm" to update install.
 
-# Setting up the Board and Application Deployment
+## Setting up the Board and Application Deployment
+A step by step tutorial and details on how to setup the board and run this application is given in the [AIBox Distributed Reid Documentation](https://xilinx.github.io/kria-apps-docs/kv260/2022.1/build/html/docs/aibox/docs/app_deployment_aib.html#). Please visit the documentation page for more details.
 
-## Setting up the Board
 
-## How to Run The Application
+### **How to Run The Application**
 
 This application consists of up to 4 server side image capturing boards with camera, and 1 client side monitoring board. So accordingly there are different binary executable to be run on **server** or **client**.
 
